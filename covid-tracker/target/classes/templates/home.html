@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>COVID TRACKER</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+  </head>
+
+  <body text="red" bgcolor="silver">
+  	<h1> CORONA VIRUS TRACKER!!!!!</h1>
+  	<div >
+  	<h3 class="display-3"  th:text="${total_no_of_cases}"> "total no of cases in all countries" </h3>
+  	<p text="red" >total no of cases in all countries</p>
+  	</div>
+   	<table >
+   		<tr>
+   			 
+   			 <th>country</th>
+   			 <th>total_cases</th>
+   			 <th>cases_today</th> 
+   		</tr>
+   		
+   		<tr th:each="data: ${datamodel}">
+   			<td th:text="${data.country}" bgcolor="blue" text="#FFF00"></td>
+   			<td th:text="${data.total_cases}" bgcolor="red"></td>
+   			<td th:text="${data.cases_today}" bgcolor="green">0</td>
+   			
+   		</tr>
+   	
+   	</table>
+  
+  </body>
+
+</html>
